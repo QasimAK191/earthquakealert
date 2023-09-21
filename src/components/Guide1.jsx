@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import PDFFile from "../rm.pdf";
 
 const Section = styled.div`
   height: 100vh;
@@ -122,7 +123,23 @@ const linkStyle = {
   textDecoration: "none",
 };
 
+const onButtonClick = () => {
+  // using Java Script method to get PDF file
+  fetch(PDFFile).then((response) => {
+    response.blob().then((blob) => {
+      // Creating new object of PDF file
+      const fileURL = window.URL.createObjectURL(blob);
+      // Setting various property values
+      let alink = document.createElement("a");
+      alink.href = fileURL;
+      alink.download = "Guide.pdf";
+      alink.click();
+    });
+  });
+};
+
 class Guide1 extends Component {
+
     render() {
         return (
 
@@ -154,8 +171,8 @@ class Guide1 extends Component {
 Before an earthquake, you can help prevent injuries and damage by making some changes inside your home. Severe shaking can topple large furniture and appliances, toss heavy items from walls and shelves, and throw open cupboards. 
                 </Desc>
                 <Button>
-                  <Link style={linkStyle} to="#works" smooth>
-                    Learn more
+                  <Link style={linkStyle} onClick={onButtonClick} smooth>
+                    Download Guide
                   </Link>
                 </Button>
               </Right>
