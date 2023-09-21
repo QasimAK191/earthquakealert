@@ -10,17 +10,13 @@ class Header extends Component {
                     <a href={'/'}><h1 className="navbar__h1">QuakeAlert</h1></a>   
                 <ul>
                     <li>
-                       <a href="/quake-tracker">Quake Tracker</a>
+                       <a href="quake-tracker">Quake Tracker</a>
                     </li>
                     <li>
-                        <a href="/quake-index">Earthquake Index</a>
+                        <a href="quake-tracker">Earthquake Index</a>
                     </li>
                     <li className="li2">
-                        <a href="/quake-tracker">Guide to Preparing for an Earthquake</a>
-                    </li>
-
-                    <li>
-                        <a href="https://www.github.com/QasimAK191/earthquakealert" target="_blank">Github Repository</a>
+                        <a href={'/quake-guide'}>Guide to Preparing for an Earthquake</a>
                     </li>
                     
                 </ul >
