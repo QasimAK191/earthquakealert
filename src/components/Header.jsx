@@ -16,7 +16,7 @@ class Header extends Component {
                         <a href="quake-tracker">Earthquake Index</a>
                     </li>
                     <li className="li2">
-                        <a href="quake-tracker">Guide to Preparing for an Earthquake</a>
+                        <a href={'/quake-guide'}>Guide to Preparing for an Earthquake</a>
                     </li>
                     
                 </ul >
