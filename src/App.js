@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './components/Header.jsx';
 import QuakeTracker from './QuakeTracker.js';
+import Home from './Home.js'
 
 
 {/*<!---------------------------- Start of  DONT TOUCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -------------------------------------------------------------------------------------->*/ }
@@ -16,12 +17,11 @@ render() {
                 
 
                 <Routes>
-                    <Route path="/">
-                        
-                           
-                            <Route path="quake-tracker" element={<QuakeTracker />} />
-                        </Route>
-                    </Routes>
+                    <Route path="/">                     
+                        <Route index element={<Home />} />  
+                        <Route path="/quake-tracker" element={<QuakeTracker />} />
+                    </Route>
+                </Routes>
             </BrowserRouter>
             <div>
                 <Header />

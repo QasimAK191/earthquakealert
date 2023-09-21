@@ -27,11 +27,14 @@ code {
   z-index: 2000; /* Set it highhhh!! */
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   height: 60px; /* fixed pixel values */
+  border: 1px groove black;
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar__h1 {
   text-align: left;
-  padding-top: 5px;
+  
   font-size: 2.8rem;
   font-family: 'Yu Gothic';
   font-weight: bolder;
@@ -44,13 +47,11 @@ code {
     font-size: 0.9rem;
     font-family: 'Yu Gothic';
     font-weight: bolder;
-    color: white;
-    position: absolute;
-    right:0px;
-    top: 0px;
-    padding-top: 35px;
+    color: #0b055a;
+    padding-left: 53vw;
+    padding-top: 10px;
     padding-right: 5px;
-    cursor: pointer;   
+    cursor: pointer;
 }
 
 .iframe {
@@ -74,8 +75,9 @@ code {
 }
 
 .map__section {
-  height: 100vh;
+  height: 99.5vh;
   width: 100%;
+  border: 1px solid red;
 }
 
 .quake__magnitude {
@@ -181,11 +183,35 @@ code {
     left: 5px;
     bottom: 12vh;
   }
+
+  .navbar__p {
+      visibility: hidden;
+  }
 }
 
 ul {
     list-style: none;
+    display: flex;
+    flex-direction: row;
 }
 li {
-    padding:0;
+    padding-left: 40px;
+    display: inline;
+    padding-top: 10px;
+    font-size: 1.2rem;
+    vertical-align:bottom;
+    text-align: end;
+}
+
+a {
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    filter: brightness(0.8);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
 }

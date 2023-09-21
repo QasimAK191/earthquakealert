@@ -5,19 +5,18 @@ class Header extends Component {
     render() {
         return (
 
-            <header className="quakeAlert_header">
+            <nav className="quakeAlert_header">
+              
+                    <h1 className="navbar__h1"><a href={'/'}>QuakeAlert</a></h1>   
                 <ul>
                     <li>
-                        <h1 className="navbar__h1">QuakeAlert.com</h1>
-                    </li>                
-                    <li>
-                        <Link to="/quake-tracker">Quake tracker</Link>
+                       <a href="quake-tracker">Quake Tracker</a>
                     </li>
                 </ul >
-                <p className="navbar__p">Track earthquakes happening around the world, in real-time</p>
+                <p className="navbar__p">Track earthquakes happening around the world, <br />in real-time</p>
             
 
-            </header>
+            </nav>
             
 
 
