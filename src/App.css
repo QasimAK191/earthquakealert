@@ -17,7 +17,7 @@ code {
 }
 
 .quakeAlert_header {
-  background-color: rgba(220,50,0,0.8);
+  background-color: rgba(255, 127, 62, 0.91);
   padding: 5px;
 
   /*new */
@@ -27,21 +27,42 @@ code {
   z-index: 2000; /* Set it highhhh!! */
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   height: 60px; /* fixed pixel values */
+  border: 1px groove black;
+  display: flex;
+  flex-direction: row;
 }
 
 .navbar__h1 {
   text-align: left;
-  padding-top: 20px;
-  font-size: 2.2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+  font-size: 2.8rem;
+  font-family: 'Yu Gothic';
   font-weight: bolder;
-  color: white;
+  color: lightgoldenrodyellow;
   cursor: pointer;
+  animation: flicker 4s infinite;
+}
+
+@keyframes flicker {
+    0% {
+        color: lightgoldenrodyellow;
+    }
+
+    50% {
+        color: darkred;
+    }
+
+
 }
 
 .navbar__p {
-  text-align: right;
-  font-size: 0.9rem;
+    text-align: right;
+    font-size: 0.9rem;
+    font-family: 'Yu Gothic';
+    font-weight: bolder;
+    color: #0b055a;
+    
+    
 }
 
 .iframe {
@@ -65,8 +86,9 @@ code {
 }
 
 .map__section {
-  height: 100vh;
+  height: 99.5vh;
   width: 100%;
+  border: 1px solid red;
 }
 
 .quake__magnitude {
@@ -99,7 +121,7 @@ code {
 .filter_sec {
   position: fixed;
   z-index: 1001;
-  background-color: rgba(29, 161, 242, 1);
+  background-color: navajowhite;
   padding: 70px 50px 5px 40px;
   margin: 200px 0 0 40px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
@@ -110,11 +132,16 @@ code {
   z-index: 2000;
   background-color: rgb(38, 38, 245);
   color: blanchedalmond;
-  padding: 15px;
-  margin: 200px 0 0 40px;
+  padding: 10px;
+  margin: 200px 0 0 10px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   border-radius: 0px 0px 25px 0px;
   cursor: pointer;
+  opacity: 60%;
+}
+
+.toggle__filter:hover {
+    opacity: 100%;
 }
 
 .display_none {
@@ -140,6 +167,7 @@ code {
   z-index: 9999;
   background: url(assets/marker_preloader.gif) center no-repeat #fff;
   background-size: 250px 250px;
+  cursor: wait;
 }
 
 .preload_message {
@@ -171,4 +199,49 @@ code {
     left: 5px;
     bottom: 12vh;
   }
+
+  .navbar__p {
+      visibility: hidden;
+  }
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+li {
+    padding-left: 40px;
+    
+    padding-top: 10px;
+    font-size: 1.2rem;
+    vertical-align:bottom;
+    width: 200px;
+}
+li.li2 {
+    padding-left: 40px;
+    padding-top: 0px;
+    font-size: 1.1rem;
+    vertical-align: bottom;
+    width: 250px;
+}
+li.li3 {
+        padding-top: 10px;
+        
+        padding-left: 380px;
+        cursor: pointer;
+        width: 20px;
+}
+
+a {
+    color: white;
+}
+a:hover{
+    text-decoration: none;
+    filter: brightness(0.8);
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
 }

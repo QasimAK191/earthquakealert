@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Form, FormGroup, CustomInput } from 'reactstrap';
+import { Form, FormGroup, CustomInput, Input } from 'reactstrap';
 
-class Filter extends Component {
+class QuakeListFilter extends Component {
 
     constructor(props) {
         super(props);
@@ -10,13 +10,16 @@ class Filter extends Component {
             filterIsOpenAddDisplayClass: false,
             magnitudeFilter: -1,
             timeFilter: 0,
-            timeFormatFilter: 'gmt'
+            timeFormatFilter: 'gmt',
+            timeSort: 0,
+            magnitudeSort: 0
         }
 
         this.toggleFilter = this.toggleFilter.bind(this);
         this.magnitudeChangeHandler = this.magnitudeChangeHandler.bind(this);
         this.timeChangeHandler = this.timeChangeHandler.bind(this);
-        this.timeFormatChangeHandler = this.timeFormatChangeHandler.bind(this);
+        this.timeSortHandler = this.timeSortHandler.bind(this);
+        this.magnitudeSortHandler = this.magnitudeSortHandler.bind(this);
     }
 
     toggleFilter() {
@@ -39,11 +42,17 @@ class Filter extends Component {
 
     timeFormatChangeHandler(event) {
         this.setState({
-            timeFormatFilter: event.target.value
+            timeSort: event.target.value
         });
     }
 
-    componentDidUpdate(prevProps, prevState) {   // This life cycle method is used to pass state data into parent component (App.js)
+    magnitudeSortHandler(event) {
+        this.setState({
+            magnitudeSort: event.target.value
+        });
+    }
+
+    componentDidUpdate(prevProps, prevState) {   // This life cycle method is used to pass state data into parent component (QuakeList.js)
         if (this.state.magnitudeFilter !== prevState.magnitudeFilter) {
             // console.log("component update due to magnitude filter");
             this.props.fetchFilterData(this.state);
@@ -68,11 +77,11 @@ class Filter extends Component {
         return (
             <>
                 <div className="toggle__filter" onClick={this.toggleFilter}>
-                    Filter Earthquakes
+                    Filters
                 </div>
                 <div className={filter_sec_class_list.join(' ')}>
                     <Form>
-                        <FormGroup>
+                        <FormGroup >
                             <CustomInput type="radio" id="magGreaterThan0" name="mag" value={-1} label="All" checked={parseInt(this.state.magnitudeFilter, 10) === -1} onChange={this.magnitudeChangeHandler} />
                             <CustomInput type="radio" id="magGreaterThan3" name="mag" value={3.5} label="Magnitude &#8805; 3.5" checked={parseFloat(this.state.magnitudeFilter) === 3.5} onChange={this.magnitudeChangeHandler} />
                             <CustomInput type="radio" id="magGreaterThan6" name="mag" value={6} label="Magnitude &#8805; 6" checked={parseInt(this.state.magnitudeFilter, 10) === 6} onChange={this.magnitudeChangeHandler} />
@@ -115,24 +124,30 @@ class Filter extends Component {
                     </Form>
                     <Form>
                         <FormGroup>
-                            <CustomInput type="radio" id="gmt"
-                                name="timeformatfilter"
-                                value="gmt"
-                                label="GMT Time Format"
-                                checked={this.state.timeFormatFilter === "gmt"}
-                                onChange={this.timeFormatChangeHandler} />
-                            <CustomInput type="radio" id="local"
+                            <CustomInput type="radio" id="gmt" name="timeformatfilter" value="gmt" label="GMT Time Format" checked={this.state.timeFormatFilter === "gmt"} onChange={this.timeFormatChangeHandler} />
+                            <CustomInput type="radio" id="local" name="timeformatfilter" value="local" label="Local Time Format" checked={this.state.timeFormatFilter === "local"} onChange={this.timeFormatChangeHandler} />
+                            <hr />
+                            <p className="filter__sec__notice">*Defaults to 'Last 30 Hours'. <br />*Defaults to 'All' magnitude. <br />&#128308; Earthquakes with &#8805; 6 magnitude. <br /> &#128992; Earthquakes with &#8805; 4 and &#60; 6 magnitude. <br /> &#128309; Earthquakes with &#60; 4 magnitude.</p>
+                        </FormGroup>
+                    </Form>
+                    <Form>
+                        <FormGroup>
+                            <Label for="exampleSelect">Order by Time of Earthquake</Label>
+                            <Input type="select"
+                                id="recent"
+                                name="timeSortfilter"
+                                <option ///Checkbox or dropdown ;-;
+                                value={0}
+                                label="Most recent"
+                                checked={this.state.timeSort === { 0 }}
+                                onChange={this.timeSortChangeHandler} />
+                            <CustomInput type="radio"
+                                id="local"
                                 name="timeformatfilter"
                                 value="local"
                                 label="Local Time Format"
                                 checked={this.state.timeFormatFilter === "local"}
                                 onChange={this.timeFormatChangeHandler} />
-                            <hr />
-                            <p className="filter__sec__notice"><i>Defaults to 'Last 30 Days'. <br />Defaults to 'All' magnitudes. </i> <br /> <br />
-                                &#128308; <b>SEVERE:</b> Earthquakes with &#8805; 6 magnitude. <br />
-                                &#128992; <b>Moderate:</b> Earthquakes with &#8805; 4 and &#60; 6 magnitude. <br />
-                                &#128309; <b>Weak:</b> Earthquakes with &#60; 4 magnitude.
-                            </p>
                         </FormGroup>
                     </Form>
                 </div>
@@ -141,4 +156,4 @@ class Filter extends Component {
     }
 }
 
-export default Filter;
+export default QuakeListFilter;
