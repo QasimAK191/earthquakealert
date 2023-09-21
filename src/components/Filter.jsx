@@ -68,7 +68,7 @@ class Filter extends Component {
         return (
             <>
                 <div className="toggle__filter" onClick={this.toggleFilter}>
-                    Filters
+                    Filter Earthquakes
                 </div>
                 <div className={filter_sec_class_list.join(' ')}>
                     <Form>
@@ -115,10 +115,24 @@ class Filter extends Component {
                     </Form>
                     <Form>
                         <FormGroup>
-                            <CustomInput type="radio" id="gmt" name="timeformatfilter" value="gmt" label="GMT Time Format" checked={this.state.timeFormatFilter === "gmt"} onChange={this.timeFormatChangeHandler} />
-                            <CustomInput type="radio" id="local" name="timeformatfilter" value="local" label="Local Time Format" checked={this.state.timeFormatFilter === "local"} onChange={this.timeFormatChangeHandler} />
+                            <CustomInput type="radio" id="gmt"
+                                name="timeformatfilter"
+                                value="gmt"
+                                label="GMT Time Format"
+                                checked={this.state.timeFormatFilter === "gmt"}
+                                onChange={this.timeFormatChangeHandler} />
+                            <CustomInput type="radio" id="local"
+                                name="timeformatfilter"
+                                value="local"
+                                label="Local Time Format"
+                                checked={this.state.timeFormatFilter === "local"}
+                                onChange={this.timeFormatChangeHandler} />
                             <hr />
-                            <p className="filter__sec__notice">*Defaults to 'Last 30 Hours'. <br />*Defaults to 'All' magnitude. <br />&#128308; Earthquakes with &#8805; 6 magnitude. <br /> &#128992; Earthquakes with &#8805; 4 and &#60; 6 magnitude. <br /> &#128309; Earthquakes with &#60; 4 magnitude.</p>
+                            <p className="filter__sec__notice"><i>Defaults to 'Last 30 Days'. <br />Defaults to 'All' magnitudes. </i> <br /> <br />
+                                &#128308; <b>SEVERE:</b> Earthquakes with &#8805; 6 magnitude. <br />
+                                &#128992; <b>Moderate:</b> Earthquakes with &#8805; 4 and &#60; 6 magnitude. <br />
+                                &#128309; <b>Weak:</b> Earthquakes with &#60; 4 magnitude.
+                            </p>
                         </FormGroup>
                     </Form>
                 </div>

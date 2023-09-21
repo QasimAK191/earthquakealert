@@ -40,6 +40,19 @@ code {
   font-weight: bolder;
   color: lightgoldenrodyellow;
   cursor: pointer;
+  animation: flicker 4s infinite;
+}
+
+@keyframes flicker {
+    0% {
+        color: lightgoldenrodyellow;
+    }
+
+    50% {
+        color: darkred;
+    }
+
+
 }
 
 .navbar__p {
@@ -48,10 +61,8 @@ code {
     font-family: 'Yu Gothic';
     font-weight: bolder;
     color: #0b055a;
-    padding-left: 53vw;
-    padding-top: 10px;
-    padding-right: 5px;
-    cursor: pointer;
+    
+    
 }
 
 .iframe {
@@ -110,7 +121,7 @@ code {
 .filter_sec {
   position: fixed;
   z-index: 1001;
-  background-color: rgba(29, 161, 242, 1);
+  background-color: navajowhite;
   padding: 70px 50px 5px 40px;
   margin: 200px 0 0 40px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
@@ -121,11 +132,16 @@ code {
   z-index: 2000;
   background-color: rgb(38, 38, 245);
   color: blanchedalmond;
-  padding: 15px;
-  margin: 200px 0 0 40px;
+  padding: 10px;
+  margin: 200px 0 0 10px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
   border-radius: 0px 0px 25px 0px;
   cursor: pointer;
+  opacity: 60%;
+}
+
+.toggle__filter:hover {
+    opacity: 100%;
 }
 
 .display_none {
@@ -196,11 +212,25 @@ ul {
 }
 li {
     padding-left: 40px;
-    display: inline;
+    
     padding-top: 10px;
     font-size: 1.2rem;
     vertical-align:bottom;
-    text-align: end;
+    width: 200px;
+}
+li.li2 {
+    padding-left: 40px;
+    padding-top: 0px;
+    font-size: 1.1rem;
+    vertical-align: bottom;
+    width: 250px;
+}
+li.li3 {
+        padding-top: 10px;
+        
+        padding-left: 380px;
+        cursor: pointer;
+        width: 20px;
 }
 
 a {
