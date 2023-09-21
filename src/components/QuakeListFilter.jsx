@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Form, FormGroup, CustomInput, Input } from 'reactstrap';
+import './QuakeListFilter.css'
 
 class QuakeListFilter extends Component {
 
@@ -7,18 +8,16 @@ class QuakeListFilter extends Component {
         super(props);
 
         this.state = {
-            filterIsOpenAddDisplayClass: false,
+            filterIsOpenAddDisplayClass: true,
             magnitudeFilter: -1,
             timeFilter: 0,
             timeFormatFilter: 'gmt',
-            timeSort: 0,
-            magnitudeSort: 0
+            magnitudeSort: 0,
         }
 
         this.toggleFilter = this.toggleFilter.bind(this);
         this.magnitudeChangeHandler = this.magnitudeChangeHandler.bind(this);
         this.timeChangeHandler = this.timeChangeHandler.bind(this);
-        this.timeSortHandler = this.timeSortHandler.bind(this);
         this.magnitudeSortHandler = this.magnitudeSortHandler.bind(this);
     }
 
@@ -67,7 +66,7 @@ class QuakeListFilter extends Component {
 
     render() {
 
-        let filter_sec_class_list = ["filter_sec"];
+        let filter_sec_class_list = ["filter_sec2"];
         if (!this.state.filterIsOpenAddDisplayClass) {
             filter_sec_class_list.push('display_none');
         }
@@ -124,32 +123,28 @@ class QuakeListFilter extends Component {
                     </Form>
                     <Form>
                         <FormGroup>
-                            <CustomInput type="radio" id="gmt" name="timeformatfilter" value="gmt" label="GMT Time Format" checked={this.state.timeFormatFilter === "gmt"} onChange={this.timeFormatChangeHandler} />
-                            <CustomInput type="radio" id="local" name="timeformatfilter" value="local" label="Local Time Format" checked={this.state.timeFormatFilter === "local"} onChange={this.timeFormatChangeHandler} />
-                            <hr />
-                            <p className="filter__sec__notice">*Defaults to 'Last 30 Hours'. <br />*Defaults to 'All' magnitude. <br />&#128308; Earthquakes with &#8805; 6 magnitude. <br /> &#128992; Earthquakes with &#8805; 4 and &#60; 6 magnitude. <br /> &#128309; Earthquakes with &#60; 4 magnitude.</p>
+                            
+                            <p className="filter__sec__notice">*Defaults to 'Last 30 Days'. <br />*Defaults to 'All' magnitude. <br />&#128308; Earthquakes with &#8805; 6 magnitude. <br /> &#128992; Earthquakes with &#8805; 4 and &#60; 6 magnitude. <br /> &#128309; Earthquakes with &#60; 4 magnitude.</p>
                         </FormGroup>
                     </Form>
-                    <Form>
-                        <FormGroup>
-                            <Label for="exampleSelect">Order by Time of Earthquake</Label>
-                            <Input type="select"
-                                id="recent"
-                                name="timeSortfilter"
-                                <option ///Checkbox or dropdown ;-;
-                                value={0}
-                                label="Most recent"
-                                checked={this.state.timeSort === { 0 }}
-                                onChange={this.timeSortChangeHandler} />
-                            <CustomInput type="radio"
-                                id="local"
-                                name="timeformatfilter"
-                                value="local"
-                                label="Local Time Format"
-                                checked={this.state.timeFormatFilter === "local"}
-                                onChange={this.timeFormatChangeHandler} />
-                        </FormGroup>
-                    </Form>
+                        <Form>
+                            <FormGroup>
+                                <CustomInput type="radio"
+                                    id="high-to-low"
+                                    name="magnitudeSort"
+                                    value={0}
+                                    label="Sort by highest magnitude to lowest"
+                                    checked={parseInt(this.state.timeFilter, 10) === 0}
+                                    onChange={this.magnitudeSortHandler} />
+                                <CustomInput type="radio"
+                                    id="low-to-high"
+                                    name="magnitudeSort"
+                                    value={1}
+                                    label="Sort by highest magnitude to lowest"
+                                    checked={parseInt(this.state.timeFilter, 10) === 1}
+                                    onChange={this.magnitudeSortHandler} />
+                            </FormGroup>
+                        </Form>
                 </div>
             </>
         )

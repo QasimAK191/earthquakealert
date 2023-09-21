@@ -13,7 +13,7 @@ class Header extends Component {
                        <a href="quake-tracker">Quake Tracker</a>
                     </li>
                     <li>
-                        <a href="quake-tracker">Earthquake Index</a>
+                        <a href="quake-index">Earthquake Index</a>
                     </li>
                     <li className="li2">
                         <a href="quake-tracker">Guide to Preparing for an Earthquake</a>

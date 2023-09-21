@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import './QuakeList.css';
 
-import QuakeListFilter from '.QuakeListFilter';
+import  QuakeListFilter from './QuakeListFilter';
+import ListComponent from './ListComponent';
 
 class QuakeList extends Component {
     constructor(props) {
@@ -99,20 +100,19 @@ class QuakeList extends Component {
             listSection = <div className="preload_message">{this.state.serverNotConnectedMsg}</div>;
         } else {
             if (this.state.filterData) {
-                listSection = <MapComponent quakes={this.state.filterData} filterTimeFormat={this.state.filterTimeFormat} />;
+                listSection = <ListComponent quakes={this.state.filterData} filterTimeFormat={this.state.filterTimeFormat} />;
                 if (this.state.filterData.length === 0) {
                     alert("No earthquakes found. Apply different filters.");
                 }
                 console.log("filtered quake data executed");
             } else {
-                listSection = <MapComponent quakes={this.state.defaultEarthquakesData} filterTimeFormat={this.state.filterTimeFormat} />;
+                listSection = <ListComponent quakes={this.state.defaultEarthquakesData} filterTimeFormat={this.state.filterTimeFormat} />;
                 console.log("default quake data executed");
             }
         }
 
         return (
             <div>
-                <Header />
                 <QuakeListFilter fetchFilterData={this.fetchDataFromFilterJsx} />
                 <div className="list__section">
                     {listSection}

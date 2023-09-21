@@ -1,0 +1,37 @@
+.quake-list-li {
+    background-color: antiquewhite;
+    border-top: 1px groove red;
+    width: 98%;
+    height: 100px;
+}
+
+.quake-list {
+    margin: 150px 5px 10px 5px;
+    display: flex;
+    flex-direction:column;
+}
+
+.quake-list-link {
+    color: darkblue;
+    text-align:right;
+}
+
+.li-time {
+    text-align: right;
+    color: deepskyblue;
+}
+
+.quake-li-red {
+    background-color: red;
+    color: white;
+}
+
+.quake-li-orange {
+    background-color:orange;
+    color: white;
+}
+
+.quake-li-blue {
+    background-color:blue;
+    color: white;
+}

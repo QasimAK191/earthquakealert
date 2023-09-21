@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './components/Header.jsx';
 import QuakeTracker from './QuakeTracker.js';
+import QuakeList from './components/QuakeList.js';
 import Home from './Home.js'
 
 
@@ -20,6 +21,7 @@ render() {
                     <Route path="/">                     
                         <Route index element={<Home />} />  
                         <Route path="/quake-tracker" element={<QuakeTracker />} />
+                        <Route path="/quake-index" element={<QuakeList />} />
                     </Route>
                 </Routes>
             </BrowserRouter>
