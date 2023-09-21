@@ -1,29 +1,37 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 
-import Header from './components/Header';
+import Header from './components/Header.jsx';
 import QuakeTracker from './QuakeTracker.js';
 
 
 {/*<!---------------------------- Start of  DONT TOUCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -------------------------------------------------------------------------------------->*/ }
-function App() {
+class App extends Component {
 
-
+render() {
     return (
-      <div>
-            <QuakeTracker />
+        <>
+            <BrowserRouter>  
+                
 
-            <BrowserRouter>
                 <Routes>
-                    <Route path="/" element={<Header />}>
-                        <Route index element={<QuakeTracker />}/>
-                        <Route path="quake-tracker" element={<QuakeTracker />} />
-                    </Route>
-                </Routes>
+                    <Route path="/">
+                        
+                           
+                            <Route path="quake-tracker" element={<QuakeTracker />} />
+                        </Route>
+                    </Routes>
             </BrowserRouter>
-      </div>
+            <div>
+                <Header />
+                
+
+            
+            </div>
+        </>
     )
+}
 }
 
 export default App;

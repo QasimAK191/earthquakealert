@@ -17,7 +17,7 @@ code {
 }
 
 .quakeAlert_header {
-  background-color: rgba(220,50,0,0.8);
+  background-color: rgba(255, 127, 62, 0.91);
   padding: 5px;
 
   /*new */
@@ -31,17 +31,26 @@ code {
 
 .navbar__h1 {
   text-align: left;
-  padding-top: 20px;
-  font-size: 2.2rem;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  padding-top: 5px;
+  font-size: 2.8rem;
+  font-family: 'Yu Gothic';
   font-weight: bolder;
-  color: white;
+  color: lightgoldenrodyellow;
   cursor: pointer;
 }
 
 .navbar__p {
-  text-align: right;
-  font-size: 0.9rem;
+    text-align: right;
+    font-size: 0.9rem;
+    font-family: 'Yu Gothic';
+    font-weight: bolder;
+    color: white;
+    position: absolute;
+    right:0px;
+    top: 0px;
+    padding-top: 35px;
+    padding-right: 5px;
+    cursor: pointer;   
 }
 
 .iframe {
@@ -140,6 +149,7 @@ code {
   z-index: 9999;
   background: url(assets/marker_preloader.gif) center no-repeat #fff;
   background-size: 250px 250px;
+  cursor: wait;
 }
 
 .preload_message {
@@ -171,4 +181,11 @@ code {
     left: 5px;
     bottom: 12vh;
   }
+}
+
+ul {
+    list-style: none;
+}
+li {
+    padding:0;
 }
