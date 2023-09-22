@@ -7,7 +7,7 @@ class Header extends Component {
 
             <nav className="quakeAlert_header">
               
-                    <a href={'/'}><h1 className="navbar__h1">QuakeeeAlert</h1></a>   
+                    <a href={'/'}><h1 className="navbar__h1">QuakeAlert</h1></a>   
                 <ul>
                     <li>
                        <a href="/quake-tracker">Quake Tracker</a>
