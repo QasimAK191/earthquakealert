@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -7,7 +6,7 @@ const Section = styled.div`
   height: 100vh;
   scroll-snap-align: center;
   display: flex;
-  flex-direction: column; /* Ensure items stack vertically on mobile */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 `;
@@ -15,9 +14,17 @@ const Section = styled.div`
 const Container = styled.div`
   height: 100vh;
   scroll-snap-align: center;
-  width: 1400px;
+  max-width: 1400px;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row; /* Horizontal alignment in desktop mode */
+  }
 `;
 
 const Left = styled.div`
@@ -25,7 +32,9 @@ const Left = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 20px;
+  text-align: center;
 
   @media only screen and (max-width: 768px) {
     align-items: center;
@@ -34,37 +43,33 @@ const Left = styled.div`
   }
 `;
 
-//RIGHT SIDE
-
 const Right = styled.div`
   flex: 2;
   position: relative;
   display: flex;
-  padding-right: 20px;
-  justify-content: center; /* Horizontal centering */
-  align-items: center; /* Vertical centering */
-  height: 100vh @media only screen and (max-width: 768px) {
-    flex: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  @media only screen and (max-width: 768px) {
     display: none;
   }
 `;
 
 const Title = styled.h1`
-  font-size: 74px;
-
+  font-size: 68px;
+  font-weight: bold;
   @media only screen and (max-width: 768px) {
-    font-size: 60px;
-  }
-
-  @media only screen and (max-width: 667px) {
-    font-size: 40px;
+    font-size: 52px;
   }
 `;
 
 const Subtitle = styled.h2`
   color: orange;
-  @media only screen and (max-width: 667px) {
-    font-size: 20px;
+  font-size: 32px;
+
+  @media only screen and (max-width: 768px) {
+    font-size: 28px;
   }
 `;
 
@@ -79,13 +84,23 @@ const Line = styled.img`
 `;
 
 const Desc = styled.p`
-  font-size: 24px;
+  font-size: 16px;
   color: Black;
+  text-align: center;
 
   @media only screen and (max-width: 768px) {
-    padding: 25px;
-    font-size: 15px;
-    overflow-wrap: break-word;
+    font-size: 16px;
+    padding: 10px;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: 10px;
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column; /* Vertical alignment in mobile view */
+    align-items: center;
   }
 `;
 
@@ -96,7 +111,7 @@ const Button = styled.div`
   width: 120px;
   padding: 10px;
   border: none;
-  border-radius: 10px;
+  border-radius: 50px;
   cursor: pointer;
   text-align: center;
 
@@ -110,10 +125,25 @@ const Button = styled.div`
 `;
 
 const Img = styled.img`
-  height: 70%;
-  width: 100%;
+  max-width: 100%;
+  height: auto;
+
   @media only screen and (max-width: 768px) {
     display: none;
+  }
+`;
+
+const Icon = styled.img`
+  background-color: blue;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  width: 20px;
+  transition: transform 0.3s;
+
+  &:hover {
+    background-color: red;
+    transform: scale(1.3);
   }
 `;
 
@@ -130,24 +160,33 @@ class Home extends Component {
           <Left>
             <Title>Be prepared this time</Title>
             <WhatWeDo>
-              <Line src="./img/line.png" />
-              <Subtitle>Earthquakes happen alot more than you think</Subtitle>
+              <Line src="./img/line.png" alt="Line" />
+              <Subtitle>Earthquakes happen a lot more than you think</Subtitle>
             </WhatWeDo>
 
-            <Desc></Desc>
-            <Button>
-              <Link style={linkStyle} to={"/quake-tracker"} smooth>
-                Map
-              </Link>
-            </Button>
-            <Button>
-              <Link style={linkStyle} to={"/quake-guide"} smooth>
-                Guide
-              </Link>
-            </Button>
+            <Desc>
+              Earthquakes can't be predicted. The first sign may be a loud bang
+              or roar. You may then feel the ground shake and roll for several
+              minutes.
+            </Desc>
+            <ButtonContainer>
+              <Button>
+                <Link style={linkStyle} to={"/quake-tracker"} smooth>
+                  Map
+                </Link>
+              </Button>
+              <Button>
+                <Link style={linkStyle} to={"/quake-guide"} smooth>
+                  Guide
+                </Link>
+              </Button>
+              <Button href="https://github.com/QasimAK191/earthquakealert">
+                GitHub
+              </Button>
+            </ButtonContainer>
           </Left>
           <Right>
-            <Img src="./img/world.png"></Img>
+            <Img src="./img/world.png" alt="World Map" />
           </Right>
         </Container>
       </Section>

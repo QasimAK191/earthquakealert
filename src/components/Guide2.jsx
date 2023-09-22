@@ -1,6 +1,6 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
-import { Link } from 'react-router-dom';
+
 
 const data = [
     "Store",
@@ -90,14 +90,23 @@ const ListItem = styled.li`
 `;
 
 const Right = styled.div`
-  flex: 1;
+  flex: 2;
   font-size: 37px;
-  padding: 200px;
+  padding: 150px;
   @media only screen and (max-width: 768px) {
     font-size: 17px;
     padding: 20px;
-    
   }
+
+`;
+const Cap = styled.p`
+&:hover {
+    background-color: #ffb733;
+    transform: translateY(-15px);
+      }
+padding: 50px;
+  background-color: orange;
+  border-radius:100px;
 `;
 
 const Guide2 = () => {
@@ -117,19 +126,19 @@ const Guide2 = () => {
               </Left>
               <Right>
                 {work === data[0] ? (
-                  <p>Immediately drop cover and hold on. If you must move to get away from heavy items on high shelves, drop to the ground first and crawl only the shortest distance necessary.</p>
+                  <Cap>Immediately drop cover and hold on. If you must move to get away from heavy items on high shelves, drop to the ground first and crawl only the shortest distance necessary.</Cap>
                 ) : work === data[1] ? (
-                  <p>Hold on and stay there, protecting your head with a pillow or blanket. You are less likely to be injured in bed where you are shielded from flying objects and broken glass. Most injuries occur when people try to run for cover.</p>
+                  <Cap>Hold on and stay there, protecting your head with a pillow or blanket. You are less likely to be injured in bed where you are shielded from flying objects and broken glass. Most injuries occur when people try to run for cover.</Cap>
                 ) : work === data[2] ? (
-                  <p>Immediately evacuate to high ground. Don’t wait for officials to issue a warning. Walk quickly, rather than drive, to avoid traffic, debris and other hazards.</p>
+                  <Cap>Immediately evacuate to high ground. Don’t wait for officials to issue a warning. Walk quickly, rather than drive, to avoid traffic, debris and other hazards.</Cap>
                 ) : work === data[3] ? (
-                  <p>Immediately drop, cover and hold on. Avoid windows and other hazards. Do not use elevators. Be aware sprinkler systems or fire alarms may activate.</p>
+                  <Cap>Immediately drop, cover and hold on. Avoid windows and other hazards. Do not use elevators. Be aware sprinkler systems or fire alarms may activate.</Cap>
                 ) : work === data[4] ?(
-                  <p>Stay at your seat, bending over to protect your head and neck, or drop to the floor between rows if there's room. Don’t move until the shaking is over. When it stops, walk out slowly, following directions from officials. Remember to drop, cover and hold on during aftershocks.</p>
+                  <Cap>Stay at your seat, bending over to protect your head and neck, or drop to the floor between rows if there's room. Don’t move until the shaking is over. When it stops, walk out slowly, following directions from officials. Remember to drop, cover and hold on during aftershocks.</Cap>
                 ): work === data[5] ?(
-                    <p>Pull over, stop and set the handbrake. Avoid overpasses, bridges, power lines, signs and other hazards. Stay inside the vehicle until the shaking is over. If a power line falls on the car, stay inside until a trained person removes the wire.</p>)
+                    <Cap>Pull over, stop and set the handbrake. Avoid overpasses, bridges, power lines, signs and other hazards. Stay inside the vehicle until the shaking is over. If a power line falls on the car, stay inside until a trained person removes the wire.</Cap>)
                     :(
-                        <p>Immediately drop, cover and hold on.  Move to a clear area only if you can safely do so. Don't run. Avoid buildings, power lines, trees, signs, vehicles and other hazards. </p>
+                        <Cap>Immediately drop, cover and hold on.  Move to a clear area only if you can safely do so. Don't run. Avoid buildings, power lines, trees, signs, vehicles and other hazards. </Cap>
                         )
                     }
               </Right>

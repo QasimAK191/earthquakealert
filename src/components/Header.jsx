@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -15,8 +14,8 @@ class Header extends Component {
                     <li>
                         <a href="quake-tracker">Earthquake Index</a>
                     </li>
-                    <li className="li2">
-                        <a href={'/quake-guide'}>Guide to Preparing for an Earthquake</a>
+                    <li >
+                        <a href={'/quake-guide'}>Guide to Prepare</a>
                     </li>
                     
                 </ul >
