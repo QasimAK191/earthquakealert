@@ -6,13 +6,14 @@ import Guide1 from "./components/Guide1.jsx";
 import Guide2 from "./components/Guide2.jsx";
 
 const Container = styled.div`
-  height: 100vh;
+  height: 98vh;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
   overflow-y: auto;
-  width: 100%;
+  width: 98%;
   overflow-x: hidden !important;
   scrollbar-width: none;
+padding-left: 10px;
 `;
 
 class Guide extends Component {
