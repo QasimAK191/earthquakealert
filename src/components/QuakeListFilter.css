@@ -2,3 +2,11 @@ input {
     display:flex;
     flex-direction:row;
 }
+
+.form-row {
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 80%;
+}

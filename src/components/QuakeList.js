@@ -84,7 +84,7 @@ class QuakeList extends Component {
             this.setState({
                 filterData: filteredData,
                 filterTimeFormat: data.timeFormatFilter,
-                isLoaded: true
+                isLoaded: true,
             });
 
         });

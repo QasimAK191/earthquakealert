@@ -6,7 +6,7 @@
 }
 
 .quake-list {
-    margin: 150px 5px 10px 5px;
+    margin: 180px 5px 10px 5px;
     display: flex;
     flex-direction:column;
 }

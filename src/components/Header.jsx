@@ -18,6 +18,10 @@ class Header extends Component {
                     <li className="li2">
                         <a href="quake-tracker">Guide to Preparing for an Earthquake</a>
                     </li>
+
+                    <li>
+                        <a href="https://www.github.com/QasimAK191/earthquakealert" target="_blank">Github Repository</a>
+                    </li>
                     
                 </ul >
                 
