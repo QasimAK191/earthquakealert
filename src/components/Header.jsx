@@ -15,13 +15,13 @@ class Header extends Component {
                     <li>
                         <a href="/quake-index">Earthquake Index</a>
                     </li>
-                    <li className="li2">
+                    <li>
                         <a href={'/quake-guide'}>Guide to Prepare</a>
                     </li>
-                    <li className="li2">
+                    <li>
                         <a href={'/quake-checklist'}>Survival Checklist</a>
                     </li>
-                    <li className="li2">
+                    <li>
                         <a href="https://www.github.com/QasimAK191/earthquakealert" target="_blank">Github Repository</a>
                     </li>
                     
