@@ -222,6 +222,7 @@ ul {
     list-style: none;
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 li {
     padding-left: 40px;
@@ -257,4 +258,56 @@ a:hover{
 nav {
     display: flex;
     flex-direction: row;
+}
+
+@media screen and (max-width:900px) {
+    ul {
+        width: 50%;
+    }
+    
+    li {
+        padding: 0px;
+        font-size: 0.8rem;
+    }
+        li.li2 {
+            padding: 0px;
+        }
+
+        li.li3 {
+            padding-top: 10px;
+            padding-left: 380px;
+            cursor: pointer;
+            width: 20px;
+        }
+
+    .filter_sec {
+        position: fixed;
+        z-index: 1001;
+        background-color: navajowhite;
+        
+        margin: 200px 0 0 10px;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+        height: 50%;
+        width: 50%;
+        font-size:0.7rem;
+        display: flex;
+        flex-direction: column;    
+    }
+
+    hr {
+        display: none;
+    }
+
+    .toggle__filter {
+        position: fixed;
+        z-index: 2000;
+        background-color: rgb(38, 38, 245);
+        color: blanchedalmond;
+        padding: 10px;
+        margin: 90vh 10px 0 70vw;
+        box-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
+        border-radius: 0px 0px 25px 0px;
+        cursor: pointer;
+        opacity: 60%;
+    }
 }
