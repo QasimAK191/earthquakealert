@@ -19,6 +19,9 @@ class Header extends Component {
                         <a href={'/quake-guide'}>Guide to Preparing for an Earthquake</a>
                     </li>
                     <li className="li2">
+                        <a href={'/quake-checklist'}>Survival Checklist</a>
+                    </li>
+                    <li className="li2">
                         <a href="https://www.github.com/QasimAK191/earthquakealert" target="_blank">Github Repository</a>
                     </li>
                     

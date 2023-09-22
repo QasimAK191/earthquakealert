@@ -6,7 +6,8 @@ import Header from "./components/Header.jsx";
 import Guide from "./Guide.js";
 import QuakeTracker from "./QuakeTracker.js";
 import Home from "./Home.js";
-import QuakeList from './components/QuakeList'
+import QuakeList from './components/QuakeList';
+import Checklist from './Checklist';
 
 {
   /*<!---------------------------- Start of  DONT TOUCH!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -------------------------------------------------------------------------------------->*/
@@ -22,6 +23,7 @@ class App extends Component {
               <Route path="/quake-tracker" element={<QuakeTracker />} />
               <Route path="/quake-index" element={<QuakeList />} />
               <Route path="/quake-guide" element={<Guide />} />
+              <Route path="/quake-checklist" element={<Checklist />} />
             </Route>
           </Routes>
         </BrowserRouter>
