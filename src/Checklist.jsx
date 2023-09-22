@@ -101,7 +101,7 @@ function Checklist() {
           </i>
         </p>
       </div>
-      <h1>Survival Check-List</h1>
+      <h1><strong>Survival Check-List</strong></h1>
       <div className="inputdata">
         <input
           type="text"
